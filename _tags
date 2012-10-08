@@ -30,3 +30,4 @@
 <lib_test/vacation.{native,byte}>: custom
 # OASIS_STOP
 <**/*.ml{,i}>: syntax_camlp4o, pkg_sexplib.syntax
+true: annot
