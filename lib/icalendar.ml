@@ -3,7 +3,7 @@ open Core.Std
 (* merges lines with subsequent lines that start with a space, as per the RFC. *)
 let unfold_lines lines =
   (* Group one line with the next when the second line starts with a space *)
-  let grouped_lines = List.group lines ~break:(fun _ s -> s.[0] <> ' ') in
+  let grouped_lines = List.group lines ~break:(fun _ s -> not (String.is_prefix ~prefix:" " s)) in
   (* Drop the first character from all but the first line of each group, then
      concatenate.*)
   List.map grouped_lines ~f:(fun group ->
