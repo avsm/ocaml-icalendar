@@ -1,0 +1,12 @@
+# OASIS_START
+# DO NOT EDIT (digest: 05032bf42011c8ec799bae17f470cb25)
+version = "0.1.0"
+description = "iCalender parser"
+requires = "re core threads"
+archive(byte) = "icalendar.cma"
+archive(byte, plugin) = "icalendar.cma"
+archive(native) = "icalendar.cmxa"
+archive(native, plugin) = "icalendar.cmxs"
+exists_if = "icalendar.cma"
+# OASIS_STOP
+
