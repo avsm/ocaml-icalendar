@@ -1,0 +1,21 @@
+OASISFormat: 0.3
+Name:        icalendar
+Version:     0.1.0
+Synopsis:    iCalender parser
+Authors:     Yaron Minsky, Anil Madhavapeddy
+License:     ISC
+Plugins:     META (0.3), DevFiles (0.3)
+BuildTools:  ocamlbuild
+
+Library icalendar
+  Path: lib
+  Findlibname: icalendar
+  Modules: Icalendar
+  BuildDepends:	re, core, threads
+
+Executable vacation
+  Path: lib_test
+  MainIs: vacation.ml
+  BuildDepends: icalendar
+  Custom: true
+  CompiledObject: best
