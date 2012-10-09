@@ -4,7 +4,7 @@ open Core.Std
    RFC. *)
 let unfold_lines lines =
   (* drop empty lines *)
-  let lines = List.filter lines ~f:(fun s -> String.length s <> 0 in
+  let lines = List.filter lines ~f:(fun s -> String.length s <> 0) in
   (* Group one line with the next when the second line starts with a space *)
   let grouped_lines = List.group lines ~break:(fun _ s -> s.[0] <> ' ') in
   (* Drop the first character from all but first line of each group, then
@@ -121,7 +121,7 @@ let full_parse = Command.basic
     empty
     +> anon ("<icalendar file>" %: string)
   )
-  (fun filename zoops ->
+  (fun filename ->
     Sexp.output_hum stdout
       (<:sexp_of<Object.t>> (Object.read filename));
     printf "\n"
